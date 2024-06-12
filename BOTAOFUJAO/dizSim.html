@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Aceita?</title>
+    
+    <style>
+        body {
+            background-color: red;
+        }
+
+        .painel {
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 700px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -80px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Feliz Dia dos Namorados</h1>
+        <h3>Aceita namorar comigo ?</h3>
+        <img src="https://cdn.pixabay.com/animation/2022/12/29/00/46/00-46-00-602_512.gif">
+        <br>
+        <a href="https://youtu.be/92AoK062E4k"><button id="sim">Sim</button></a>
+        <button id="nao" onmouseover="posicionarBotao()">Não</button>
+    </div>
+
+    <script>
+        function posicionarBotao() {
+            var botaoNao = document.getElementById("nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
